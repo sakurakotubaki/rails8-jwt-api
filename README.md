@@ -82,3 +82,8 @@ curl -X POST http://localhost:3000/auth/login \
     "password": "password123"
   }'
 ```
+
+## Gitのコミットするときの注意
+どうやら作成されたRailsもGitがあるらしく別々に、GitHubへpushする必要がありそうだ。
+
+https://github.com/sakurakotubaki/jwt_auth_api
