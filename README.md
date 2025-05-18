@@ -29,7 +29,7 @@ bundle install
 rails new jwt_auth_api --api --force --database=postgresql
 
 # myappへ移動して実行する。
-cd store
+cd jwt_auth_api
 # データベース作成
 rails db:create
 
