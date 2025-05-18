@@ -1,4 +1,4 @@
-# Rails8 Docker Container
+# Rails8 JWT Auth API
 環境構築用ファイルを作成する。
 
 1. database.yml
@@ -26,7 +26,7 @@ docker exec -it rails8-tutorial-web-1 bash
 # コンテナ内で
 bundle install
 # create project
-rails new store --force --database=postgresql
+rails new jwt_auth_api --api --force --database=postgresql
 
 # myappへ移動して実行する。
 cd store
