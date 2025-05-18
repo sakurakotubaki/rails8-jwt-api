@@ -1,0 +1,31 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev  # もしくは Dockerfile
+    command: bash -c "tail -f /dev/null"  # コンテナを起動し続けるための一時的な対応
+    tty: true
+    # 以下は変更なし
+    volumes:
+      - .:/rails
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgres://general_user:password@db:5432/dev_db # 新規作成したdb設定
+      - POSTGRES_PASSWORD=password # 新規作成したdb設定
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=general_user # 新規作成したdb設定
+      - POSTGRES_DB=dev_db # 新規作成したdb設定
+      - POSTGRES_PASSWORD=password # 新規作成したdb設定
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

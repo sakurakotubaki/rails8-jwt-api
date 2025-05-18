@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db                              # ← ホスト名を「db」に変更
+  username: postgres                    # ← ユーザー名を「postgres」に変更
+  password: password                    # ← パスワードを「password」に変更
+
+development:
+  <<: *default
+  database: myapp_development           # ← アプリ名に合わせて調整
+
+test:
+  <<: *default
+  database: myapp_test                  # ← アプリ名に合わせて調整
+
+production:
+  <<: *default
+  database: myapp_production            # ← アプリ名に合わせて調整
+  username: myapp                       # ← 必要に応じて変更
+  password: <%= ENV["MYAPP_DATABASE_PASSWORD"] %>  # ← 環境変数名を調整
