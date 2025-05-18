@@ -73,6 +73,7 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     benchmark (0.4.0)
     bigdecimal (3.1.9)
     builder (3.3.0)
@@ -91,6 +92,8 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    jwt (2.10.1)
+      base64
     logger (1.7.0)
     loofah (2.24.1)
       crass (~> 1.0.2)
@@ -182,6 +185,8 @@ PLATFORMS
   aarch64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
+  jwt
   rails (~> 8.0)
 
 BUNDLED WITH
