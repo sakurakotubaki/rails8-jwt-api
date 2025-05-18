@@ -16,7 +16,7 @@ docker-compose up -d
 # コンテナ名を調べる
 docker ps
 # コンテナ名を指定して内部に入る
-docker exec -it rails8-tutorial-web-1 bash
+docker exec -it rails8-jwt-api-web-1 bash
 ```
 
 [Rails入門](https://guides.rubyonrails.org/getting_started.html#adding-authentication)
